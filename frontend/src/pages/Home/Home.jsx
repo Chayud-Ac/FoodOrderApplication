@@ -3,6 +3,7 @@ import "./Home.css";
 import Header from "../../Components/Header/Header";
 import ExploreMenu from "../../Components/ExploreMenu/ExploreMenu";
 import FoodDisplay from "../../Components/FoodDisplay/FoodDisplay";
+import AppDownload from "../../Components/AppDownload/AppDownload";
 
 const Home = () => {
   //   this state category variable is used to track the current category base on the onClick element from the user
@@ -13,6 +14,7 @@ const Home = () => {
       <Header />
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
+      <AppDownload />
     </div>
   );
 };
