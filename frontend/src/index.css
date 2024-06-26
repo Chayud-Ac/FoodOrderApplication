@@ -18,3 +18,15 @@ a {
   width: 80%;
   margin: auto;
 }
+
+/* Set fade in when user refresh the page */
+/*  This apply with header-contents class in header section*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
