@@ -19,7 +19,7 @@ const FoodDisplay = ({ category }) => {
         {filteredList.map((item, index) => (
           <FoodItem
             key={index}
-            id={item.id}
+            id={item._id}
             name={item.name}
             image={item.image}
             price={item.price}
