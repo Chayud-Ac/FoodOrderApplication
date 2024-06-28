@@ -32,9 +32,19 @@ const StoreContextProvider = (props) => {
     }));
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+  const getTotalCartAmount = () => {
+    // This function used to calculated the total amount of price in cartItems which will be then used in the Cart.jsx page
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        // get item info from the food_list array of object by using item key in the cartItems (item key is the product id of the object in food_list)
+        // itemInfo will retutn the product object if the item key is matching with the product id in food_list
+        let itemInfo = food_list.find((product) => product._id === item);
+        totalAmount += itemInfo.price * cartItems[item];
+      }
+    }
+    return totalAmount;
+  };
 
   const contextValue = {
     food_list,
@@ -42,6 +52,7 @@ const StoreContextProvider = (props) => {
     setCartItems,
     addToCarts,
     removeFromCarts,
+    getTotalCartAmount,
   };
   return (
     <StoreContext.Provider value={contextValue}>
