@@ -109,4 +109,25 @@
   .cart-promocode {
     justify-content: start;
   }
+
+  .cart-items-title .cart-col-price {
+    display: none;
+  }
+
+  .cart-items-item .cart-col-price {
+    display: none;
+  }
+
+  .cart-items-title .cart-col-title {
+    display: none;
+  }
+
+  .cart-items-item .cart-col-title {
+    display: none;
+  }
+
+  .cart-items-title {
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    font-size: max(2vw, 12px);
+  }
 }
