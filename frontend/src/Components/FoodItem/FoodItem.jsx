@@ -4,12 +4,17 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, image, price, description, category }) => {
-  const { cartItems, addToCarts, removeFromCarts } = useContext(StoreContext);
+  const { cartItems, addToCarts, removeFromCarts, url } =
+    useContext(StoreContext);
 
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img className="food-item-image" src={image} alt="" />
+        <img
+          className="food-item-image"
+          src={url + "/images/" + image}
+          alt=""
+        />
         {/* Show the different image depending on the itemCount state variable */}
         {!cartItems[id] ? (
           <img
