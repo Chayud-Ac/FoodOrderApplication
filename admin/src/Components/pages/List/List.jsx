@@ -32,7 +32,6 @@ const List = ({ url }) => {
 
   return (
     <div className="list">
-      <p>All Food list</p>
       <div className="list-table">
         <div className="list-table-format title">
           <b>Image</b>
