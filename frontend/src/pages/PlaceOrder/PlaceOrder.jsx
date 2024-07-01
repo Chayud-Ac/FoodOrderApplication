@@ -3,6 +3,7 @@ import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, food_list, cartItems, url } =
@@ -26,9 +27,16 @@ const PlaceOrder = () => {
     setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    if (!token) {
+      navigate("/cart");
+    } else if (getTotalCartAmount() === 0) {
+      navigate("/cart");
+      alert("Cart is Empty");
+    }
+  }, [token]);
 
   // redirect to the payment
   const placeOrder = async (event) => {
