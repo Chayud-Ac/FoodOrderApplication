@@ -13,6 +13,7 @@ const Verify = () => {
   const { url } = useContext(StoreContext);
 
   const verifyPayment = async () => {
+    // sending post request to the server side giving success property and orderId property which those props will later use to update or delete the object in orderModel for the backend part
     const response = await axios.post(url + "/api/order/verify", {
       success,
       orderId,
