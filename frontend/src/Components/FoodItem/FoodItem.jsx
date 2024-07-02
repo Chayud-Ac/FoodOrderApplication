@@ -3,7 +3,7 @@ import "./FoodItem.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
-const FoodItem = ({ id, name, image, price, description, category }) => {
+const FoodItem = ({ id, name, image, price, description }) => {
   const { cartItems, addToCarts, removeFromCarts, url } =
     useContext(StoreContext);
 
