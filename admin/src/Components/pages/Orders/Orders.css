@@ -8,7 +8,7 @@
 
 .order-item {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
   align-items: start;
   gap: 20px;
   border: 1px solid tomato;
@@ -39,6 +39,21 @@
   padding: 10px 0px;
   outline: none;
   border-radius: 5px;
+}
+
+.update-button {
+  background-color: #ffe8e4;
+  color: black;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.update-button:hover {
+  background-color: red;
+  color: white;
 }
 
 @media (max-width: 1000px) {

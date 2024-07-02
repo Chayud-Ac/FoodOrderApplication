@@ -8,6 +8,7 @@ import { assets } from "../../../assets/assets";
 
 const Orders = ({ url }) => {
   const [orders, setOrders] = useState([]);
+  const [updatedStatus, setUpdatedStatus] = useState({}); // { orderId : status }
 
   const fetchAllOrders = async () => {
     const response = await axios.get(url + "/api/order/list");
@@ -23,8 +24,25 @@ const Orders = ({ url }) => {
     fetchAllOrders();
   }, []);
 
-  const statusHandler = async (e, orderId) => {
+  // this function use to handle the change of the status of the orderId { orderId : status} when user select the option.
+  // the change value will then use with the onSubmit function
+
+  const handleStatusChange = (e, orderId) => {
     const newStatus = e.target.value;
+    setUpdatedStatus((prevStatus) => ({
+      ...prevStatus,
+      [orderId]: newStatus,
+    }));
+  };
+
+  const fecthStatusHandler = async (orderId) => {
+    const newStatus = updatedStatus[orderId];
+
+    if (!newStatus) {
+      toast.error("Please select a status before updating");
+      return;
+    }
+
     const response = await axios.post(url + "/api/order/status", {
       orderId,
       status: newStatus,
@@ -39,6 +57,7 @@ const Orders = ({ url }) => {
         return order;
       });
       setOrders(updatedOrders);
+      toast.success(`Updated Status '${newStatus}'`);
     } else {
       toast.error("Failed to update status");
     }
@@ -71,13 +90,19 @@ const Orders = ({ url }) => {
             <p>Items: {order.items.length}</p>
             <p>${order.amount}</p>
             <select
-              value={order.status}
-              onChange={(e) => statusHandler(e, order._id)}
+              value={updatedStatus[order._id] || order.status}
+              onChange={(e) => handleStatusChange(e, order._id)}
             >
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>
             </select>
+            <button
+              onClick={() => fecthStatusHandler(order._id)}
+              className="update-button"
+            >
+              Update Status
+            </button>
           </div>
         ))}
       </div>
