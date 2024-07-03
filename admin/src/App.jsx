@@ -7,21 +7,27 @@ import List from "./Components/pages/List/List";
 import Orders from "./Components/pages/Orders/Orders";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import Login from "./Components/pages/Login/Login";
 
 const App = () => {
   const url = "http://localhost:4000";
 
+  const [login, setLogin] = useState(false);
+  const [token, setToken] = useState("");
+
   return (
     <div>
       <ToastContainer />
-      <Navbar />
+      <Navbar login={login} />
       <hr />
+      {!login ? <Login setLogin={setLogin} path="/" /> : <></>}
       <div className="app-content">
-        <Sidebar />
+        <Sidebar token={token} />
         <Routes>
-          <Route path="/add" element={<Add url={url} />} />
-          <Route path="/list" element={<List url={url} />} />
-          <Route path="/orders" element={<Orders url={url} />} />
+          <Route path="/" element={<Add url={url} token={token} />} />
+          <Route path="/list" element={<List url={url} token={token} />} />
+          <Route path="/orders" element={<Orders url={url} token={token} />} />
         </Routes>
       </div>
     </div>
