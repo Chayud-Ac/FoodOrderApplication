@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
+:root {
+  --black: black;
+  --grey: #323232;
+  --white: #f7f7f7;
+  --text-light-blue: #49557e;
+  --text-white: #fff4f2;
+  --text-grey: #323232;
+  --text-black: black;
+  --shadow-color: #00000015;
+  /* Add more variables as needed */
+}
+
 * {
   padding: 0;
   margin: 0;

@@ -4,7 +4,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 15px;
-  border: 1px solid #cdcdcd;
+  border: 1px solid var(--grey);
   font-size: 13px;
   text-align: center;
 }
@@ -13,12 +13,12 @@
   width: 70%;
   margin-left: max(5vw, 25px);
   margin-top: 50px;
-  color: #6d6d6d;
+  color: var(--text-grey);
   font-size: 16px;
 }
 
 .list-table .title {
-  background-color: #f9f9f9;
+  background-color: var(--white);
 }
 
 .list-table-format img {

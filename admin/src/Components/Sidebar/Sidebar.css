@@ -1,7 +1,7 @@
 .sidebar {
   width: 13%;
   min-height: 100vh;
-  border: 1.5px solid #a9a9a9;
+  border: 1.5px solid var(--grey);
   border-top: 0;
   font-size: max(1vw, 10px);
 }
@@ -26,8 +26,8 @@
 }
 
 .sidebar-options .active {
-  background-color: #fff0ed;
-  border-color: tomato;
+  background-color: var(--white);
+  border-color: var(--black);
 }
 
 @media (max-width: 900px) {
