@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+
 // StoreContext allows components to access shared data without passing props manually
 // We create food_list using store context allowing every component to access
 {
@@ -18,6 +20,10 @@ const StoreContextProvider = (props) => {
   const [food_list, setFoodList] = useState([]);
 
   const addToCarts = async (itemId) => {
+    if (!token) {
+      return toast.error("Please Login before making order");
+    }
+
     if (!cartItems[itemId]) {
       setCartItems((prevState) => ({ ...prevState, [itemId]: 1 }));
     } else {

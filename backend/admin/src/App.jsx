@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Add from "./Components/pages/Add/Add";
 import List from "./Components/pages/List/List";
 import Orders from "./Components/pages/Orders/Orders";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
