@@ -18,6 +18,12 @@ const Navbar = ({ setShowLogin }) => {
     navigate("/");
   };
 
+  const handleNavigation = (sectionId) => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+    }
+  };
+
   return (
     <div className="navbar">
       <Link to="/">
@@ -37,6 +43,7 @@ const Navbar = ({ setShowLogin }) => {
           href="#explore-menu"
           onClick={() => {
             setMenu("menu");
+            handleNavigation("explore-menu");
           }}
           className={menu === "menu" ? "active" : ""}
         >
@@ -55,7 +62,14 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar-right">
         <div className="navbar-search-icon">
           <Link to="/cart">
-            <img src={assets.cart_icon} alt="" />
+            <img
+              src={assets.cart_icon}
+              onClick={() => {
+                setMenu("cart");
+              }}
+              className={menu === "cart" ? "active" : ""}
+              alt=""
+            />
           </Link>
           <div className={getTotalCartAmount() ? "dot " : ""}></div>
         </div>
