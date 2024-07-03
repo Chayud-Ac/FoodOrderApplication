@@ -1,7 +1,7 @@
 import foodModel from "../models/foodModel.js";
 import fs from "fs";
 
-// add food item which this use to add food to the mongoose database that come from the post request from the front end post request
+// add food item which this use to add food to the mongoose database that come from the post request from the admin panal post request
 
 const addFood = async (req, res) => {
   let image_filename = `${req.file.filename}`;
@@ -33,6 +33,8 @@ const listFood = async (req, res) => {
     res.json({ success: false, message: "Error" });
   }
 };
+
+// / delete food from the table this is for admin
 
 const removeFood = async (req, res) => {
   try {
