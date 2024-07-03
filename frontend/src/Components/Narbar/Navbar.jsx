@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
-
 import { useState } from "react";
 import { StoreContext } from "../../context/StoreContext";
 
@@ -22,7 +21,7 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="navbar">
       <Link to="/">
-        <img src={assets.logo} className="logo" />
+        <img src={assets.grabpanda_icon} className="logo" />
       </Link>
       <ul className="navbar-menu">
         <Link
@@ -44,15 +43,6 @@ const Navbar = ({ setShowLogin }) => {
           menu
         </a>
         <a
-          href="#app-download"
-          onClick={() => {
-            setMenu("mobile-app");
-          }}
-          className={menu === "mobile-app" ? "active" : ""}
-        >
-          mobile-app
-        </a>
-        <a
           href="#footer"
           onClick={() => {
             setMenu("contact-us");
@@ -63,10 +53,9 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
           <Link to="/cart">
-            <img src={assets.basket_icon} alt="" />
+            <img src={assets.cart_icon} alt="" />
           </Link>
           <div className={getTotalCartAmount() ? "dot " : ""}></div>
         </div>
@@ -78,7 +67,7 @@ const Navbar = ({ setShowLogin }) => {
             <img src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown">
               <li onClick={() => navigate("/myorders")}>
-                <img src={assets.bag_icon} alt="" />
+                <img src={assets.order_icon} alt="" />
                 <p>Orders</p>
               </li>
               <hr />

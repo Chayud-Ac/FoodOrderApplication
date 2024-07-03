@@ -22,9 +22,9 @@
   margin-bottom: 15px;
   width: 100%;
   padding: 10px;
-  border: 1px solid #c5c5c5c5;
+  border: 1px solid var(--shadow-color);
   border-radius: 10px;
-  outline-color: tomato;
+  outline-color: var(--black);
 }
 
 .place-order-left .multi-fields {
