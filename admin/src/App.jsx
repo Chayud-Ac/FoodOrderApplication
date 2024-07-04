@@ -19,8 +19,8 @@ const App = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      setToken(localStorage.getItem("token"));
       setLogin(true);
+      setToken(localStorage.getItem("token"));
     }
   }, []);
 
@@ -46,7 +46,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Add url={url} token={token} />} />
           <Route path="/list" element={<List url={url} token={token} />} />
-          <Route path="/orders" element={<Orders url={url} token={token} />} />
+          <Route
+            path="/orders"
+            element={<Orders url={url} token={token} setToken={setToken} />}
+          />
         </Routes>
       </div>
     </div>

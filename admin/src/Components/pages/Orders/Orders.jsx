@@ -6,11 +6,11 @@ import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { assets } from "../../../assets/assets";
 
-const Orders = ({ url, token }) => {
+const Orders = ({ url, token, setToken }) => {
   const [orders, setOrders] = useState([]);
   const [updatedStatus, setUpdatedStatus] = useState({}); // { orderId : status }
 
-  const fetchAllOrders = async () => {
+  const fetchAllOrders = async (token) => {
     const response = await axios.get(url + "/api/order/list", {
       headers: { token },
     });
@@ -23,7 +23,11 @@ const Orders = ({ url, token }) => {
   };
 
   useEffect(() => {
-    fetchAllOrders();
+    const tokenFromStorage = localStorage.getItem("token");
+    if (tokenFromStorage) {
+      setToken(tokenFromStorage);
+      fetchAllOrders(tokenFromStorage);
+    }
   }, []);
 
   // this function use to handle the change of the status of the orderId { orderId : status} when user select the option.
