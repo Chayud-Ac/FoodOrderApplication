@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import Login from "./Components/pages/Login/Login";
+import { useEffect } from "react";
 
 const App = () => {
   const url = "http://localhost:4000";
@@ -16,12 +17,30 @@ const App = () => {
   const [login, setLogin] = useState(false);
   const [token, setToken] = useState("");
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setToken(localStorage.getItem("token"));
+      setLogin(true);
+    }
+  }, []);
+
   return (
     <div>
       <ToastContainer />
       <Navbar login={login} />
       <hr />
-      {!login ? <Login setLogin={setLogin} path="/" /> : <></>}
+      {!login ? (
+        <Login
+          setLogin={setLogin}
+          login={login}
+          setToken={setToken}
+          token={token}
+          url={url}
+          path="/"
+        />
+      ) : (
+        <></>
+      )}
       <div className="app-content">
         <Sidebar token={token} />
         <Routes>

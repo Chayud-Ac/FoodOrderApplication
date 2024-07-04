@@ -3,8 +3,6 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 
-// createToken for user
-
 console.log(process.env.JWT_SECRET);
 
 const createToken = (id) => {

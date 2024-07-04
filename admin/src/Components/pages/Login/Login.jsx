@@ -2,6 +2,8 @@ import React from "react";
 import "./Login.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = ({ url, login, setLogin, token, setToken }) => {
   const [data, setData] = useState({
@@ -15,10 +17,24 @@ const Login = ({ url, login, setLogin, token, setToken }) => {
     setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(data);
-    setLogin(true);
+
+    try {
+      const response = await axios.post(`${url}/api/admin/login`, data);
+      if (response.data.success) {
+        console.log(response.data.token);
+        setLogin(true);
+        localStorage.setItem("token", response.data.token);
+        setToken(response.data.token);
+      } else {
+        console.log(response.data.message);
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
