@@ -16,7 +16,7 @@ const Orders = ({ url, token, setToken }) => {
     });
     if (response.data.success) {
       setOrders(response.data.data);
-      console.log(response.data.data); // Ensure status is included in the data logged here
+      console.log(response.data.data);
     } else {
       toast.error(response.data.message);
     }

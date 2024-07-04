@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div>
       <ToastContainer />
-      <Navbar login={login} />
+      <Navbar login={login} setLogin={setLogin} />
       <hr />
       {!login ? (
         <Login
