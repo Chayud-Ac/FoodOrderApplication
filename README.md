@@ -29,6 +29,54 @@ The project is divided into three main parts:
 
 1. **Frontend**: The user interface built with React.
 2. **Admin Panel**: The admin interface built with React.
-3. **Backend**: The server-side application built with Node.js and Express.
+3. **Backend**: The server-side application built with Node.js , Express , and MongoDB
+
+
+## Dependencies of each section
+1. **Frontend**:  axios , react , react-dom , react-router-dom , react-toastify
+2. **admin**:  axios , react , react-dom , react-router-dom , react-toastify
+3. **admin**:  bcrypt , cors , dotenv , express , jsonwebtoken , mongoose , multer , nodemon , stripe , validator
+
+
+
+
+# Setup the Project
+
+## mongoDB
+Firstly , vist the mongodb website and set up the database and the connection key
+
+
+## frontend setup and start
+
+```bash
+cd frontend/
+npm install
+npm run dev
+```
+
+## admin setup and start
+
+```bash
+cd admin/
+npm install
+npm run dev
+```
+
+## backend setup and start
+create .env in backend root directory to store environment variable and credential data
+
+MONGO_URI= "********"
+PORT = "****"
+JWT_SECRET="********"
+STRIPE_SECRET_KEY="********************"
+SUPERADMIN_EMAIL="*******"
+SUPERADMIN_PASSWORD="*******"
+
+```bash
+cd backend/
+npm install
+npm run server
+```
+
 
 
