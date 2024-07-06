@@ -1,7 +1,7 @@
 # FoodOrderApplication
 
 Building food order full stack application including User Interface and Admin panel using stack of reactJS , MongoDB , Express , Node JS& Stripe
-This is my first project for building full stack application the structure of the project might not that good but you can explore more  details of each part in Figma file here which I created diagram for each section of the project
+This is my first project for building full stack application the structure of the project might not that good but you can explore more details of each part in Figma file here which I created diagram for each section of the project
 Figma : https://www.figma.com/board/WlrPXfQbbnU9d4f7TYk8D6/FoodOrderApplication?t=Fg2r5CC0ziyGBUtd-0
 
 
@@ -65,14 +65,14 @@ npm run dev
 
 ## backend setup and start
 create .env in backend root directory to store environment variable and credential data
-
+```bash
 MONGO_URI= "xxxxxxxxxxxxxxxxxxxxxxx"
 PORT = "xxxxxxxxxxxxxxxxxxxxxx"
 JWT_SECRET="xxxxxxxxxxxxxxxx"
 STRIPE_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxx"
 SUPERADMIN_EMAIL="xxxxxxxxxxxxxxxxx"
 SUPERADMIN_PASSWORD="xxxxxxxxxxxxxxxxxxxxx"
-
+```
 ```bash
 cd backend/
 npm install
