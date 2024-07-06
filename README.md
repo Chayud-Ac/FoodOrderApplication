@@ -27,8 +27,8 @@ Figma : https://www.figma.com/board/WlrPXfQbbnU9d4f7TYk8D6/FoodOrderApplication?
 
 The project is divided into three main parts:
 
-1. **Frontend**: The user interface built with React.
-2. **Admin Panel**: The admin interface built with React.
+1. **Frontend**: The user interface built with React-vite javscript and css
+2. **Admin Panel**: The admin interface built with React-vite javscript and css
 3. **Backend**: The server-side application built with Node.js , Express , and MongoDB
 
 
