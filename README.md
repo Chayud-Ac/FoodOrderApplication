@@ -44,6 +44,7 @@ The project is divided into three main parts:
 
 ## mongoDB
 Firstly , vist the mongodb website and set up the database and the connection key
+as well as visit the stripe website to create the API test key
 
 
 ## frontend setup and start
@@ -65,12 +66,12 @@ npm run dev
 ## backend setup and start
 create .env in backend root directory to store environment variable and credential data
 
-MONGO_URI= "********"
-PORT = "****"
-JWT_SECRET="********"
-STRIPE_SECRET_KEY="********************"
-SUPERADMIN_EMAIL="*******"
-SUPERADMIN_PASSWORD="*******"
+MONGO_URI= "xxxxxxxxxxxxxxxxxxxxxxx"
+PORT = "xxxxxxxxxxxxxxxxxxxxxx"
+JWT_SECRET="xxxxxxxxxxxxxxxx"
+STRIPE_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxx"
+SUPERADMIN_EMAIL="xxxxxxxxxxxxxxxxx"
+SUPERADMIN_PASSWORD="xxxxxxxxxxxxxxxxxxxxx"
 
 ```bash
 cd backend/
