@@ -6,6 +6,9 @@ import FoodItem from "../FoodItem/FoodItem";
 const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
 
+  // ! Backend fetch กลับมาแค่ path ของ image ซึง path image มันไม่ match กับที่เก็บฝั่ง front ต้องแก้ตัว path image
+  console.log(food_list);
+
   // Filter the list based on the category
   const filteredList =
     category === "All"
