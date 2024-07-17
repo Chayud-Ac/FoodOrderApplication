@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const LoginPopup = ({ setShowLogin }) => {
   const { url, token, setToken } = useContext(StoreContext);
@@ -35,6 +36,7 @@ const LoginPopup = ({ setShowLogin }) => {
       localStorage.setItem("token", response.data.token);
       setShowLogin(false);
     } else {
+      toast.error(response.data);
       console.log(response.data);
     }
   };
