@@ -5,6 +5,12 @@ This is my first project for building full stack application the structure of th
 Figma : https://www.figma.com/board/WlrPXfQbbnU9d4f7TYk8D6/FoodOrderApplication?t=Fg2r5CC0ziyGBUtd-0
 
 
+
+# live site
+Client : https://frontend-8hn6.onrender.com
+Admin : https://foodorderapplication-ggpj.onrender.com ( you can create your own admin account by follow the create admin section down below or using the test one (email : admin@gmail.com , password : 123123 )
+
+
 ## Features
 
 ### User Features
@@ -78,6 +84,13 @@ cd backend/
 npm install
 npm run server
 ```
+
+```bash
+cd backend/
+node middleware/createSuperadmin.js
+```
+
+
 
 
 
